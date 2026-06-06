@@ -30,7 +30,7 @@ int main(){
     int pointsColSize[] = {2, 2, 2};
 
     int** points = malloc(pointsSize * sizeof(int*));
-    for(int i = 0, i < pointsSize - 1; i++){
+    for(int i = 0; i < pointsSize - 1; i++){
         points[i] = malloc(2 * sizeof(int));
     }
 
