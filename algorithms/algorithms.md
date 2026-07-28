@@ -286,3 +286,62 @@ The array is now sorted in ascending order.
 ### Conclusion
 
 Quick Sort is one of the fastest and most widely used sorting algorithms. It uses the divide-and-conquer technique by selecting a pivot, partitioning the array, and recursively sorting the resulting subarrays. Although its worst-case time complexity is **O(n²)**, careful pivot selection typically results in **O(n log n)** performance, making Quick Sort an excellent choice for sorting large datasets.
+
+
+## Heap Sort Documentation
+
+### Introduction
+
+Heap Sort is an efficient comparison-based sorting algorithm that uses a **Binary Heap** data structure. It first builds a **Max Heap**, where the largest element is always at the root, and then repeatedly removes the largest element and places it at the end of the array until the array is completely sorted.
+
+### How It Works
+
+1. Convert the given array into a **Max Heap**.
+2. The largest element is now at the root of the heap.
+3. Swap the root element with the last element of the heap.
+4. Reduce the heap size by one, excluding the last (sorted) element.
+5. Restore the Max Heap property by performing **heapify** on the root.
+6. Repeat the process until only one element remains in the heap.
+
+### Example
+
+Given the array:
+
+`[5, 3, 8, 4, 2]`
+
+* **Build Max Heap:** `[8, 4, 5, 3, 2]`
+* **Swap 8 and 2:** `[2, 4, 5, 3, 8]`
+* **Heapify:** `[5, 4, 2, 3, 8]`
+* **Swap 5 and 3:** `[3, 4, 2, 5, 8]`
+* **Heapify:** `[4, 3, 2, 5, 8]`
+* Continue until the array becomes:
+  `[2, 3, 4, 5, 8]`
+
+The array is now sorted in ascending order.
+
+### Advantages
+
+* Efficient for sorting large datasets.
+* Guaranteed **O(n log n)** time complexity in all cases.
+* Performs sorting in place, requiring no significant extra memory.
+* Does not suffer from the worst-case performance issues of Quick Sort.
+
+### Disadvantages
+
+* More complex to implement than simpler sorting algorithms.
+* Not a stable sorting algorithm (equal elements may change their relative order).
+* In practice, it is often slower than Quick Sort due to lower cache efficiency.
+
+### Time and Space Complexity
+
+| Case         | Time Complexity |
+| ------------ | --------------- |
+| Best Case    | **O(n log n)**  |
+| Average Case | **O(n log n)**  |
+| Worst Case   | **O(n log n)**  |
+
+**Space Complexity:** **O(1)**
+
+### Conclusion
+
+Heap Sort is a powerful sorting algorithm that uses a Binary Heap to efficiently sort data. It guarantees **O(n log n)** time complexity for the best, average, and worst cases while requiring only constant extra memory. Although it is more complex than algorithms like Bubble Sort or Insertion Sort and is not stable, its predictable performance and in-place sorting make it a good choice for large datasets where consistent performance is important.
