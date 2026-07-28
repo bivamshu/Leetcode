@@ -162,3 +162,127 @@ The array is now sorted in ascending order.
 ### Conclusion
 
 Insertion Sort is a simple and efficient algorithm for sorting small or nearly sorted datasets. It builds the sorted array one element at a time by inserting each new element into its correct position. Although it is not suitable for large datasets due to its quadratic time complexity, its simplicity, stability, and efficiency on nearly sorted data make it a useful algorithm for educational purposes and practical applications involving small collections of data.
+
+
+## Merge Sort Documentation
+
+### Introduction
+
+Merge Sort is an efficient **divide-and-conquer** sorting algorithm. It works by repeatedly dividing the array into smaller subarrays until each subarray contains only one element. The subarrays are then merged back together in sorted order to produce the final sorted array.
+
+### How It Works
+
+1. Divide the array into two equal halves.
+2. Recursively divide each half until every subarray contains only one element.
+3. Compare the elements of the subarrays and merge them in sorted order.
+4. Continue merging the sorted subarrays until the entire array is combined into one sorted array.
+
+### Example
+
+Given the array:
+
+`[5, 3, 8, 4, 2]`
+
+**Step 1: Divide**
+
+* `[5, 3, 8, 4, 2]`
+* `[5, 3]` and `[8, 4, 2]`
+* `[5] [3]` and `[8] [4, 2]`
+* `[4] [2]`
+
+**Step 2: Merge**
+
+* `[5]` and `[3]` → `[3, 5]`
+* `[4]` and `[2]` → `[2, 4]`
+* `[8]` and `[2, 4]` → `[2, 4, 8]`
+* `[3, 5]` and `[2, 4, 8]` → `[2, 3, 4, 5, 8]`
+
+The array is now sorted in ascending order.
+
+### Advantages
+
+* Very efficient for sorting large datasets.
+* Has a guaranteed time complexity of **O(n log n)** in all cases.
+* Stable sorting algorithm (preserves the relative order of equal elements).
+* Well suited for linked lists and external sorting.
+
+### Disadvantages
+
+* Requires additional memory for the temporary arrays used during merging.
+* More complex to implement than Bubble Sort, Selection Sort, or Insertion Sort.
+
+### Time and Space Complexity
+
+| Case         | Time Complexity |
+| ------------ | --------------- |
+| Best Case    | **O(n log n)**  |
+| Average Case | **O(n log n)**  |
+| Worst Case   | **O(n log n)**  |
+
+**Space Complexity:** **O(n)**
+
+### Conclusion
+
+Merge Sort is a powerful and efficient sorting algorithm that uses the divide-and-conquer approach to sort data. It consistently performs in **O(n log n)** time regardless of the initial order of the elements, making it one of the best choices for sorting large datasets. Although it requires additional memory for merging, its stability and predictable performance make it widely used in real-world applications.
+
+
+## Quick Sort Documentation
+
+### Introduction
+
+Quick Sort is a highly efficient **divide-and-conquer** sorting algorithm. It works by selecting a **pivot** element from the array and partitioning the remaining elements into two groups: those smaller than the pivot and those greater than the pivot. The same process is then applied recursively to each group until the entire array is sorted.
+
+### How It Works
+
+1. Select a pivot element from the array (commonly the first, last, middle, or a random element).
+2. Rearrange the array so that:
+
+   * Elements smaller than the pivot are placed to its left.
+   * Elements greater than the pivot are placed to its right.
+3. The pivot is now in its correct sorted position.
+4. Recursively apply the same process to the left and right subarrays.
+5. Continue until all subarrays contain one or zero elements.
+
+### Example
+
+Given the array:
+
+`[5, 3, 8, 4, 2]`
+
+* **Choose pivot:** 5
+* **Partition:** `[3, 4, 2] 5 [8]`
+* **Sort left subarray:** `[3, 4, 2]` → `[2, 3, 4]`
+* **Sort right subarray:** `[8]` (already sorted)
+* **Combine:** `[2, 3, 4, 5, 8]`
+
+The array is now sorted in ascending order.
+
+### Advantages
+
+* Very fast and efficient for large datasets.
+* Average time complexity is **O(n log n)**.
+* Performs sorting in place, requiring very little extra memory.
+* Widely used in practice due to its excellent average-case performance.
+
+### Disadvantages
+
+* Worst-case time complexity is **O(n²)** if poor pivot choices are made (such as always selecting the smallest or largest element in an already sorted array).
+* Not a stable sorting algorithm (equal elements may change their relative order).
+* Recursive implementation may lead to deep recursion for unfavorable input.
+
+### Time and Space Complexity
+
+| Case         | Time Complexity |
+| ------------ | --------------- |
+| Best Case    | **O(n log n)**  |
+| Average Case | **O(n log n)**  |
+| Worst Case   | **O(n²)**       |
+
+**Space Complexity:**
+
+* **O(log n)** (average, due to recursion)
+* **O(n)** (worst case, due to recursion depth)
+
+### Conclusion
+
+Quick Sort is one of the fastest and most widely used sorting algorithms. It uses the divide-and-conquer technique by selecting a pivot, partitioning the array, and recursively sorting the resulting subarrays. Although its worst-case time complexity is **O(n²)**, careful pivot selection typically results in **O(n log n)** performance, making Quick Sort an excellent choice for sorting large datasets.
