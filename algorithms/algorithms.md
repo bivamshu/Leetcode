@@ -51,4 +51,114 @@ The array is now sorted in ascending order.
 
 Bubble Sort is one of the simplest sorting algorithms and is commonly used for educational purposes to demonstrate the concept of sorting through repeated comparisons and swaps. Although it is not suitable for large datasets because of its quadratic time complexity, it is useful for learning basic algorithm design and for sorting small collections of data.
 
+## Selection Sort Documentation
 
+### Introduction
+
+Selection Sort is a simple comparison-based sorting algorithm. It works by repeatedly finding the smallest element from the unsorted portion of the array and placing it at the beginning. With each pass, the sorted portion of the array grows until the entire array is sorted.
+
+genui{"computing_fundamentals_algorithms_learning_block":{"type_id":"SELECTION_SORT"}}
+
+### How It Works
+
+1. Start from the first element of the array.
+2. Assume the first unsorted element is the smallest.
+3. Compare it with all the remaining elements in the unsorted portion of the array.
+4. If a smaller element is found, update the position of the smallest element.
+5. After scanning the unsorted portion, swap the smallest element with the first unsorted element.
+6. Move the boundary of the sorted portion one position to the right and repeat the process until the entire array is sorted.
+
+### Example
+
+Given the array:
+
+`[5, 3, 8, 4, 2]`
+
+* **Pass 1:** Find the smallest element (2) and swap it with 5 → `[2, 3, 8, 4, 5]`
+* **Pass 2:** Find the smallest element in the remaining array (3) → No swap needed → `[2, 3, 8, 4, 5]`
+* **Pass 3:** Find the smallest element (4) and swap it with 8 → `[2, 3, 4, 8, 5]`
+* **Pass 4:** Find the smallest element (5) and swap it with 8 → `[2, 3, 4, 5, 8]`
+
+The array is now sorted in ascending order.
+
+### Advantages
+
+* Easy to understand and implement.
+* Performs fewer swaps than Bubble Sort.
+* Requires no additional memory (in-place sorting).
+
+### Disadvantages
+
+* Inefficient for large datasets due to its quadratic time complexity.
+* Always performs the same number of comparisons, even if the array is already sorted.
+
+### Time and Space Complexity
+
+| Case         | Time Complexity |
+| ------------ | --------------- |
+| Best Case    | **O(n²)**       |
+| Average Case | **O(n²)**       |
+| Worst Case   | **O(n²)**       |
+
+**Space Complexity:** **O(1)**
+
+### Conclusion
+
+Selection Sort is a straightforward sorting algorithm that repeatedly selects the smallest element from the unsorted portion of the array and places it in its correct position. It is simple to implement and requires only a small amount of memory. Although it is more efficient than Bubble Sort in terms of the number of swaps, its overall time complexity makes it unsuitable for sorting large datasets. It is mainly used for educational purposes and for sorting small collections of data.
+
+## Insertion Sort Documentation
+
+### Introduction
+
+Insertion Sort is a simple comparison-based sorting algorithm that builds the sorted array one element at a time. It works by taking each element from the unsorted portion of the array and inserting it into its correct position in the sorted portion.
+
+genui{"computing_fundamentals_algorithms_learning_block":{"type_id":"INSERTION_SORT"}}
+
+### How It Works
+
+1. Assume the first element is already sorted.
+2. Select the next element from the unsorted portion of the array (called the **key**).
+3. Compare the key with the elements in the sorted portion, starting from the end.
+4. Shift all elements that are greater than the key one position to the right.
+5. Insert the key into its correct position.
+6. Repeat the process until all elements have been inserted into the sorted portion.
+
+### Example
+
+Given the array:
+
+`[5, 3, 8, 4, 2]`
+
+* **Pass 1:** Insert 3 before 5 → `[3, 5, 8, 4, 2]`
+* **Pass 2:** Insert 8 → No change → `[3, 5, 8, 4, 2]`
+* **Pass 3:** Insert 4 between 3 and 5 → `[3, 4, 5, 8, 2]`
+* **Pass 4:** Insert 2 at the beginning → `[2, 3, 4, 5, 8]`
+
+The array is now sorted in ascending order.
+
+### Advantages
+
+* Easy to understand and implement.
+* Efficient for small datasets.
+* Performs well on nearly sorted arrays.
+* Requires no additional memory (in-place sorting).
+* Stable sorting algorithm (preserves the relative order of equal elements).
+
+### Disadvantages
+
+* Inefficient for large datasets due to its quadratic time complexity.
+* Requires many shifts when sorting a reverse-ordered array.
+
+### Time and Space Complexity
+
+| Case                        | Time Complexity |
+| --------------------------- | --------------- |
+| Best Case (already sorted)  | **O(n)**        |
+| Average Case                | **O(n²)**       |
+| Worst Case (reverse sorted) | **O(n²)**       |
+
+**Space Complexity:** **O(1)**
+
+### Conclusion
+
+Insertion Sort is a simple and efficient algorithm for sorting small or nearly sorted datasets. It builds the sorted array one element at a time by inserting each new element into its correct position. Although it is not suitable for large datasets due to its quadratic time complexity, its simplicity, stability, and efficiency on nearly sorted data make it a useful algorithm for educational purposes and practical applications involving small collections of data.
